@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Luca novaresio pollera?</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f9f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    #question {
+        margin-top: 150px;
+    }
+    #options {
+        display: none;
+        margin-top: 20px;
+        transition: margin-top 0.5s ease-in-out;
+    }
+    button {
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 0 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    button.yes {
+        background-color: #4CAF50;
+        color: white;
+    }
+    button.no {
+        background-color: #f44336;
+        color: white;
+    }
+    button.more {
+        background-color: #008CBA;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div id="question">
+    <h2>¿Luca Novaresio pollera?</h2>
+    <button class="yes" onclick="showOptions('yes')">Sí</button>
+    <button class="no" onclick="showOptions('no')">No</button>
+</div>
+
+<div id="options">
+    <button class="more" onclick="moveBox()">No, deja de mentir</button>
+</div>
+
+<script>
+function showOptions(response) {
+    if (response === 'yes') {
+        document.getElementById('question').innerHTML = "<h2> ya sabia que lo eras.</h2>";
+        document.getElementById('options').style.display = 'none';
+    } else {
+        document.getElementById('options').style.display = 'block';
+    }
+}
+
+function moveBox() {
+    var optionsDiv = document.getElementById('options');
+    var newPosition = Math.floor(Math.random() * 300); // Random position
+    optionsDiv.style.marginTop = newPosition + 'px';
+}
+</script>
+
+</body>
+</html>
